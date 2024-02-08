@@ -123,7 +123,8 @@ def main():
     fields = [entry[0] for entry in cursor.description]
     # return cursor.fetchall()
     for row in cursor:
-        record_wit_fields = "".join(f"{i} {str(j)}" for i, j in zip(row, fields)).strip()
+        record_wit_fields = "".join(f"{i} {str(j)}"
+                                    for i, j in zip(row, fields)).strip()
         logger.info(record_wit_fields)
     # return fields
 
